@@ -2,11 +2,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 @theme {
-  --color-cream: #0D0F1A;
-  --color-cream-dark: #131526;
-  --color-sand: #1E2138;
-  --color-bark: #2E3158;
-  --color-bark-light: #3E4178;
+  --color-cream: #060810;
+  --color-cream-dark: #0C0E1C;
+  --color-sand: #181A30;
+  --color-bark: #222448;
+  --color-bark-light: #323468;
   --color-forest: #4ADE80;
   --color-forest-light: #86EFAC;
   --color-forest-dark: #22C55E;
@@ -27,12 +27,66 @@ body {
   font-family: "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Noto Sans TC", sans-serif;
   -webkit-font-smoothing: auto;
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+    linear-gradient(rgba(74, 222, 128, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(74, 222, 128, 0.04) 1px, transparent 1px);
   background-size: 8px 8px;
+}
+
+/* CRT scanlines */
+body::after {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0px,
+    transparent 3px,
+    rgba(0, 0, 0, 0.18) 3px,
+    rgba(0, 0, 0, 0.18) 4px
+  );
+  pointer-events: none;
+  z-index: 9998;
+}
+
+/* All headings → pixel font */
+h1, h2, h3 {
+  font-family: "Press Start 2P", monospace;
+  letter-spacing: 0.05em;
+  line-height: 1.6;
 }
 
 .pixel-font {
   font-family: "Press Start 2P", monospace;
   letter-spacing: 0.05em;
+}
+
+/* Green glow on forest-colored text */
+.text-forest {
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.9), 0 0 24px rgba(74, 222, 128, 0.4);
+}
+
+/* Blinking cursor */
+@keyframes blink-cursor {
+  0%, 49% { opacity: 1; }
+  50%, 100% { opacity: 0; }
+}
+
+.cursor::after {
+  content: '▮';
+  font-family: "Press Start 2P", monospace;
+  animation: blink-cursor 1s step-end infinite;
+  color: var(--color-forest);
+  margin-left: 6px;
+  text-shadow: 0 0 8px rgba(74, 222, 128, 0.9);
+}
+
+/* Pixel press on buttons/links */
+button:active, a:active {
+  transform: translate(2px, 2px);
+}
+
+/* Selection highlight */
+::selection {
+  background: var(--color-forest);
+  color: var(--color-cream);
 }

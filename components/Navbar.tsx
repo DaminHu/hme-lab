@@ -15,7 +15,7 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="bg-cream border-b border-bark sticky top-0 z-30">
+    <header className="bg-cream border-b-2 border-forest/20 sticky top-0 z-30" style={{ boxShadow: '0 1px 0 rgba(74,222,128,0.08)' }}>
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 pixel-font text-forest text-xs tracking-wide">
           <FlaskConical size={20} strokeWidth={1.8} />
@@ -30,7 +30,7 @@ export default function Navbar() {
               href={l.href}
               className={`px-4 py-2 text-sm transition-all border ${pathname.startsWith(l.href) ? 'border-forest text-forest font-medium bg-forest/10' : 'border-transparent text-stone hover:text-soil hover:bg-sand'}`}
             >
-              {l.label}
+              {pathname.startsWith(l.href) ? '▶ ' : ''}{l.label}
             </Link>
           ))}
           <a
