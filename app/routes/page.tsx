@@ -1,6 +1,5 @@
 'use client'
 import { useState } from 'react'
-import { Mountain, Clock, ArrowUp, Route, ExternalLink, ChevronDown, ChevronUp } from 'lucide-react'
 import { routes, difficultyMap, type Route as RouteType } from '@/data/routes'
 
 const difficultyOptions = [
@@ -32,16 +31,16 @@ function RouteCard({ route }: { route: RouteType }) {
             <p className="text-xs text-stone">{route.region}</p>
           </div>
           <div className="flex items-center gap-4 text-xs text-stone shrink-0">
-            <span className="hidden sm:flex items-center gap-1"><Mountain size={12} />{route.elevation.toLocaleString()}m</span>
-            <span className="hidden sm:flex items-center gap-1"><Clock size={12} />{route.duration}</span>
-            {open ? <ChevronUp size={16} className="text-bark" /> : <ChevronDown size={16} className="text-bark" />}
+            <span className="hidden sm:flex items-center gap-1">▲ {route.elevation.toLocaleString()}m</span>
+            <span className="hidden sm:flex items-center gap-1">◷ {route.duration}</span>
+            <span className="text-bark pixel-font text-[10px]">{open ? '▲' : '▼'}</span>
           </div>
         </div>
 
         <div className="flex gap-3 mt-3 text-xs text-stone sm:hidden">
-          <span className="flex items-center gap-1"><Mountain size={11} />{route.elevation.toLocaleString()}m</span>
-          <span className="flex items-center gap-1"><Clock size={11} />{route.duration}</span>
-          <span className="flex items-center gap-1"><Route size={11} />{route.distance}km</span>
+          <span className="flex items-center gap-1">▲ {route.elevation.toLocaleString()}m</span>
+          <span className="flex items-center gap-1">◷ {route.duration}</span>
+          <span className="flex items-center gap-1">→ {route.distance}km</span>
         </div>
       </button>
 
@@ -64,8 +63,8 @@ function RouteCard({ route }: { route: RouteType }) {
 
           <p className="text-sm text-soil leading-relaxed mb-3">{route.description}</p>
 
-          <div className="bg-amber-50 border border-amber-100 rounded-xl px-4 py-3 mb-3">
-            <p className="text-xs text-amber-800 leading-relaxed"><span className="font-semibold">注意事項：</span>{route.tips}</p>
+          <div className="bg-cream border-l-2 border-moss px-4 py-3 mb-3">
+            <p className="text-xs text-stone leading-relaxed"><span className="pixel-font text-[7px] text-moss mr-2">[!]</span>{route.tips}</p>
           </div>
 
           <div className="flex flex-wrap gap-1.5 mb-3">
@@ -84,8 +83,7 @@ function RouteCard({ route }: { route: RouteType }) {
               rel="noopener noreferrer"
               className="inline-flex items-center gap-1.5 text-xs text-forest hover:text-forest-dark transition-colors"
             >
-              <ExternalLink size={12} />
-              查看健行筆記路線資訊
+                <span>↗</span> 查看健行筆記路線資訊
             </a>
           )}
         </div>

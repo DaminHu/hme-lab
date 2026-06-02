@@ -2,7 +2,6 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useState } from 'react'
-import { Menu, X, FlaskConical } from 'lucide-react'
 
 const links = [
   { href: '/checklist', label: '裝備清單' },
@@ -18,7 +17,7 @@ export default function Navbar() {
     <header className="bg-cream border-b-2 border-forest/20 sticky top-0 z-30" style={{ boxShadow: '0 1px 0 rgba(74,222,128,0.08)' }}>
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 pixel-font text-forest text-xs tracking-wide">
-          <FlaskConical size={20} strokeWidth={1.8} />
+          <span className="text-base leading-none">⚗</span>
           HME Lab
         </Link>
 
@@ -45,7 +44,7 @@ export default function Navbar() {
 
         {/* Mobile hamburger */}
         <button onClick={() => setOpen(v => !v)} className="md:hidden p-2 text-stone hover:text-soil">
-          {open ? <X size={20} /> : <Menu size={20} />}
+          <span className="pixel-font text-base leading-none">{open ? '✕' : '≡'}</span>
         </button>
       </div>
 

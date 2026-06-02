@@ -1,10 +1,9 @@
 import Link from 'next/link'
-import { CheckSquare, Map, Swords, FlaskConical } from 'lucide-react'
 
 const tools = [
   {
     href: '/checklist',
-    Icon: CheckSquare,
+    icon: '☑',
     title: '裝備清單產生器',
     desc: '依路線類型、天數、季節、性別，自動產生個人化裝備清單，可勾選與分享。',
     tag: 'FREE',
@@ -12,7 +11,7 @@ const tools = [
   },
   {
     href: '/routes',
-    Icon: Map,
+    icon: '⊞',
     title: '登山路線圖鑑',
     desc: '精選台灣熱門登山路線，附難度、爬升、時間等資訊，找到適合你的路線。',
     tag: 'NEW',
@@ -20,8 +19,8 @@ const tools = [
   },
   {
     href: '/game',
-    Icon: Swords,
-    title: '戶外求生挑戰',
+    icon: '⚔',
+    title: 'WHAT IF',
     desc: '文字冒險遊戲，模擬山林突發狀況，考驗你的戶外判斷力，寓教於樂。',
     tag: 'PLAY',
     num: '03',
@@ -49,7 +48,7 @@ export default function Home() {
 
       {/* Tool cards */}
       <div className="grid md:grid-cols-3 gap-4 mb-16">
-        {tools.map(({ href, Icon, title, desc, tag, num }) => (
+        {tools.map(({ href, icon, title, desc, tag, num }) => (
           <Link
             key={href}
             href={href}
@@ -59,8 +58,8 @@ export default function Home() {
               <span className="pixel-font text-[8px] text-stone-light">{num}</span>
               <span className="pixel-font text-[7px] border border-moss/40 text-moss px-2 py-1">[{tag}]</span>
             </div>
-            <div className="w-10 h-10 bg-forest/10 border border-forest/25 flex items-center justify-center mb-4">
-              <Icon size={18} className="text-forest" strokeWidth={2} />
+            <div className="w-10 h-10 bg-forest/10 border border-forest/25 flex items-center justify-center mb-4 text-xl">
+              {icon}
             </div>
             <h2 className="text-soil text-xs mb-2 group-hover:text-forest transition-colors">{title}</h2>
             <p className="text-stone text-xs leading-relaxed">{desc}</p>

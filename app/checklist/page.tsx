@@ -1,6 +1,5 @@
 'use client'
 import { useState, useMemo } from 'react'
-import { Check, ExternalLink, Share2, Printer } from 'lucide-react'
 import { generateChecklist, CATEGORIES, type Activity, type Season, type Gender } from '@/data/gearList'
 
 const activityOptions: { value: Activity; label: string; emoji: string }[] = [
@@ -171,13 +170,13 @@ export default function ChecklistPage() {
               onClick={handleShare}
               className="flex items-center gap-1.5 px-3 py-2 pixel-font text-[7px] text-stone bg-cream-dark border-2 border-sand hover:border-forest hover:text-forest transition-colors"
             >
-              <Share2 size={11} />SHARE
+              <span>↗</span>SHARE
             </button>
             <button
               onClick={() => window.print()}
               className="flex items-center gap-1.5 px-3 py-2 pixel-font text-[7px] text-stone bg-cream-dark border-2 border-sand hover:border-forest hover:text-forest transition-colors"
             >
-              <Printer size={11} />PRINT
+              <span>⎙</span>PRINT
             </button>
           </div>
 
@@ -196,7 +195,7 @@ export default function ChecklistPage() {
                   >
                     {/* Pixel checkbox */}
                     <div className={`w-5 h-5 border-2 flex items-center justify-center shrink-0 mt-0.5 transition-all ${checked.has(item.id) ? 'bg-forest border-forest' : 'border-bark hover:border-forest'}`}>
-                      {checked.has(item.id) && <Check size={11} className="text-cream" strokeWidth={3} />}
+                      {checked.has(item.id) && <span className="text-cream text-xs leading-none font-bold">✓</span>}
                     </div>
 
                     <div className="flex-1 min-w-0">
@@ -219,7 +218,7 @@ export default function ChecklistPage() {
                           onClick={e => e.stopPropagation()}
                           className="flex items-center gap-1 text-[10px] text-forest hover:text-forest-light mt-0.5 transition-colors"
                         >
-                          <ExternalLink size={9} />
+                          <span>↗</span>
                           {item.hmeLabel || 'HME 推薦'}
                         </a>
                       )}
