@@ -45,7 +45,7 @@ export default function GamePage() {
     <div className="max-w-2xl mx-auto px-4 py-8">
       <div className="flex items-start justify-between mb-6">
         <div>
-          <h1 className="text-2xl font-bold text-soil mb-1">戶外求生挑戰</h1>
+          <h1 className="text-2xl font-bold text-soil mb-1">WHAT IF</h1>
           <p className="text-stone text-sm">模擬山林突發狀況，考驗你的判斷力</p>
         </div>
         {!scene.isEnd && (
