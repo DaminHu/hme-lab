@@ -1,27 +1,38 @@
 @import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
 
 @theme {
-  --color-cream: #F5F2EE;
-  --color-cream-dark: #EDE8E2;
-  --color-sand: #E8E0D4;
-  --color-bark: #C4B8A8;
-  --color-bark-light: #DDD6CC;
-  --color-forest: #3D5A47;
-  --color-forest-light: #4E7260;
-  --color-forest-dark: #2C4335;
-  --color-soil: #2A2520;
-  --color-stone: #8C8278;
-  --color-stone-light: #B5AFA8;
-  --color-moss: #6B8C6E;
+  --color-cream: #0D0F1A;
+  --color-cream-dark: #131526;
+  --color-sand: #1E2138;
+  --color-bark: #2E3158;
+  --color-bark-light: #3E4178;
+  --color-forest: #4ADE80;
+  --color-forest-light: #86EFAC;
+  --color-forest-dark: #22C55E;
+  --color-soil: #F0F0F8;
+  --color-stone: #8A8AA8;
+  --color-stone-light: #6A6A88;
+  --color-moss: #FFD700;
 }
 
 * {
   -webkit-tap-highlight-color: transparent;
+  border-radius: 0 !important;
 }
 
 body {
   background-color: var(--color-cream);
   color: var(--color-soil);
   font-family: "Helvetica Neue", "Hiragino Kaku Gothic ProN", "Noto Sans TC", sans-serif;
-  -webkit-font-smoothing: antialiased;
+  -webkit-font-smoothing: auto;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.022) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.022) 1px, transparent 1px);
+  background-size: 8px 8px;
+}
+
+.pixel-font {
+  font-family: "Press Start 2P", monospace;
+  letter-spacing: 0.05em;
 }

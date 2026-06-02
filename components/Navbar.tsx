@@ -15,9 +15,9 @@ export default function Navbar() {
   const [open, setOpen] = useState(false)
 
   return (
-    <header className="bg-white border-b border-sand sticky top-0 z-30">
+    <header className="bg-cream border-b border-bark sticky top-0 z-30">
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 font-bold text-forest text-lg tracking-wide">
+        <Link href="/" className="flex items-center gap-2 pixel-font text-forest text-xs tracking-wide">
           <FlaskConical size={20} strokeWidth={1.8} />
           HME Lab
         </Link>
@@ -28,7 +28,7 @@ export default function Navbar() {
             <Link
               key={l.href}
               href={l.href}
-              className={`px-4 py-2 rounded-xl text-sm transition-all ${pathname.startsWith(l.href) ? 'bg-forest/8 text-forest font-medium' : 'text-stone hover:text-soil hover:bg-sand'}`}
+              className={`px-4 py-2 text-sm transition-all border ${pathname.startsWith(l.href) ? 'border-forest text-forest font-medium bg-forest/10' : 'border-transparent text-stone hover:text-soil hover:bg-sand'}`}
             >
               {l.label}
             </Link>
@@ -37,7 +37,7 @@ export default function Navbar() {
             href="https://www.hme.tw/"
             target="_blank"
             rel="noopener noreferrer"
-            className="ml-2 px-4 py-2 bg-forest text-white text-sm rounded-xl hover:bg-forest-dark transition-colors"
+            className="ml-2 px-4 py-2 bg-forest text-cream text-sm font-bold hover:bg-forest-dark transition-colors border-2 border-forest-dark"
           >
             HME 官網
           </a>
@@ -51,13 +51,13 @@ export default function Navbar() {
 
       {/* Mobile menu */}
       {open && (
-        <div className="md:hidden border-t border-sand bg-white px-4 py-3 space-y-1">
+        <div className="md:hidden border-t border-bark bg-cream px-4 py-3 space-y-1">
           {links.map(l => (
             <Link
               key={l.href}
               href={l.href}
               onClick={() => setOpen(false)}
-              className={`block px-3 py-2.5 rounded-xl text-sm ${pathname.startsWith(l.href) ? 'bg-forest/8 text-forest font-medium' : 'text-stone hover:bg-sand'}`}
+              className={`block px-3 py-2.5 text-sm border-l-2 ${pathname.startsWith(l.href) ? 'border-forest text-forest font-medium bg-forest/10' : 'border-transparent text-stone hover:bg-sand'}`}
             >
               {l.label}
             </Link>

@@ -33,10 +33,10 @@ export default function Home() {
         <div className="inline-flex items-center gap-2 text-forest mb-4">
           <FlaskConical size={32} strokeWidth={1.5} />
         </div>
-        <h1 className="text-4xl md:text-5xl font-bold text-soil tracking-tight mb-4">
+        <h1 className="pixel-font text-2xl md:text-3xl text-forest tracking-tight mb-4">
           HME Lab
         </h1>
-        <p className="text-stone text-lg max-w-xl mx-auto leading-relaxed">
+        <p className="text-stone text-base max-w-xl mx-auto leading-relaxed">
           戶外人的免費工具集。裝備清單、路線資訊、求生挑戰，讓你的每次出發更有準備。
         </p>
       </div>
@@ -47,13 +47,13 @@ export default function Home() {
           <Link
             key={href}
             href={href}
-            className="group bg-white border border-sand rounded-3xl p-6 hover:border-bark hover:shadow-md transition-all"
+            className="group bg-cream-dark border-2 border-sand p-6 hover:border-forest transition-all hover:shadow-[4px_4px_0_0_#4ADE80]"
           >
             <div className="flex items-start justify-between mb-4">
-              <div className="w-10 h-10 bg-forest/8 rounded-2xl flex items-center justify-center">
+              <div className="w-10 h-10 bg-forest/15 border border-forest/30 flex items-center justify-center">
                 <Icon size={20} className="text-forest" strokeWidth={1.8} />
               </div>
-              <span className="text-[10px] bg-sand text-stone px-2 py-1 rounded-full font-medium">{tag}</span>
+              <span className="text-[9px] bg-bark text-stone-light px-2 py-1 font-medium tracking-wide">{tag}</span>
             </div>
             <h2 className="font-semibold text-soil text-base mb-2 group-hover:text-forest transition-colors">{title}</h2>
             <p className="text-stone text-sm leading-relaxed">{desc}</p>
@@ -62,19 +62,19 @@ export default function Home() {
       </div>
 
       {/* HME promo */}
-      <div className="bg-forest rounded-3xl px-8 py-8 text-center text-white">
-        <p className="text-white/50 text-sm mb-2 uppercase tracking-widest font-medium">Powered by</p>
-        <h2 className="text-2xl font-bold mb-3">HME 戶外用品</h2>
-        <p className="text-white/70 text-sm mb-5 max-w-md mx-auto">
+      <div className="bg-cream-dark border-2 border-forest px-8 py-8 text-center shadow-[4px_4px_0_0_#22C55E]">
+        <p className="text-forest/60 text-xs mb-2 uppercase tracking-widest pixel-font">Powered by</p>
+        <h2 className="text-2xl font-bold mb-3 text-soil">HME 戶外用品</h2>
+        <p className="text-stone text-sm mb-5 max-w-md mx-auto">
           專業戶外裝備選品，Snow Peak、Arc&apos;teryx、Nanga、Osprey，為你的每次冒險做好準備。
         </p>
         <a
           href="https://www.hme.tw/"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block bg-white text-forest font-semibold px-6 py-2.5 rounded-xl text-sm hover:bg-cream transition-colors"
+          className="inline-block bg-forest text-cream font-bold px-6 py-2.5 text-sm hover:bg-forest-dark transition-colors border-2 border-forest-dark"
         >
-          前往官網選購
+          前往官網選購 ▶
         </a>
       </div>
     </div>

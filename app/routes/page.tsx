@@ -18,7 +18,7 @@ function RouteCard({ route }: { route: RouteType }) {
   const diff = difficultyMap[route.difficulty]
 
   return (
-    <div className="bg-white border border-sand rounded-2xl overflow-hidden">
+    <div className="bg-cream-dark border border-sand rounded-2xl overflow-hidden">
       <button
         className="w-full text-left px-5 py-4 hover:bg-cream/50 transition-colors"
         onClick={() => setOpen(v => !v)}
@@ -112,7 +112,7 @@ export default function RoutesPage() {
       <p className="text-stone text-sm mb-8">精選台灣熱門路線，找到適合你的冒險</p>
 
       {/* Filters */}
-      <div className="bg-white border border-sand rounded-3xl p-5 mb-6">
+      <div className="bg-cream-dark border border-sand rounded-3xl p-5 mb-6">
         <input
           type="text"
           placeholder="搜尋路線名稱或標籤..."

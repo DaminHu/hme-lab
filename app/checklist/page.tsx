@@ -68,7 +68,7 @@ export default function ChecklistPage() {
       <p className="text-stone text-sm mb-8">填入行程資訊，自動產生個人化裝備清單</p>
 
       {/* Filters */}
-      <div className="bg-white border border-sand rounded-3xl p-5 mb-6">
+      <div className="bg-cream-dark border border-sand rounded-3xl p-5 mb-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-5">
           {activityOptions.map(opt => (
             <button
@@ -137,10 +137,10 @@ export default function ChecklistPage() {
                 <div className="h-full bg-forest rounded-full transition-all" style={{ width: `${pct}%` }} />
               </div>
             </div>
-            <button onClick={handleShare} className="flex items-center gap-1.5 px-3 py-2 text-xs text-stone bg-white border border-sand rounded-xl hover:border-bark transition-colors">
+            <button onClick={handleShare} className="flex items-center gap-1.5 px-3 py-2 text-xs text-stone bg-cream-dark border border-sand rounded-xl hover:border-bark transition-colors">
               <Share2 size={13} />分享
             </button>
-            <button onClick={() => window.print()} className="flex items-center gap-1.5 px-3 py-2 text-xs text-stone bg-white border border-sand rounded-xl hover:border-bark transition-colors">
+            <button onClick={() => window.print()} className="flex items-center gap-1.5 px-3 py-2 text-xs text-stone bg-cream-dark border border-sand rounded-xl hover:border-bark transition-colors">
               <Printer size={13} />列印
             </button>
           </div>
@@ -149,7 +149,7 @@ export default function ChecklistPage() {
           {byCategory.map(({ category, items }) => (
             <div key={category} className="mb-5">
               <h2 className="text-xs font-semibold text-stone uppercase tracking-widest mb-2">{category}</h2>
-              <div className="bg-white border border-sand rounded-2xl overflow-hidden">
+              <div className="bg-cream-dark border border-sand rounded-2xl overflow-hidden">
                 {items.map((item, idx) => (
                   <div
                     key={item.id}

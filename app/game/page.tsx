@@ -58,7 +58,7 @@ export default function GamePage() {
 
       {/* Scene card */}
       <div
-        className={`bg-white border border-sand rounded-3xl p-6 mb-4 transition-opacity duration-200 ${animating ? 'opacity-0' : 'opacity-100'} ${scene.isEnd ? `${endColors[scene.endType!]} border` : ''}`}
+        className={`bg-cream-dark border border-sand rounded-3xl p-6 mb-4 transition-opacity duration-200 ${animating ? 'opacity-0' : 'opacity-100'} ${scene.isEnd ? `${endColors[scene.endType!]} border` : ''}`}
       >
         <div className="flex items-center gap-2 mb-4">
           {scene.isEnd && <span className="text-2xl">{endIcons[scene.endType!]}</span>}
@@ -93,7 +93,7 @@ export default function GamePage() {
               className={`w-full text-left px-5 py-3.5 rounded-2xl border text-sm font-medium transition-all ${
                 isRestart
                   ? 'bg-forest text-white border-forest hover:bg-forest-dark'
-                  : 'bg-white border-sand text-soil hover:border-bark hover:bg-cream/50'
+                  : 'bg-cream-dark border-sand text-soil hover:border-bark hover:bg-cream/50'
               }`}
             >
               {choice.text}
