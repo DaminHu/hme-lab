@@ -7,7 +7,7 @@ import { Menu, X, FlaskConical } from 'lucide-react'
 const links = [
   { href: '/checklist', label: '裝備清單' },
   { href: '/routes', label: '路線圖鑑' },
-  { href: '/game', label: '戶外求生' },
+  { href: '/game', label: 'WHAT IF' },
 ]
 
 export default function Navbar() {
@@ -39,7 +39,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             className="ml-2 px-4 py-2 bg-forest text-cream text-sm font-bold hover:bg-forest-dark transition-colors border-2 border-forest-dark"
           >
-            HME 官網
+            HME.TW
           </a>
         </nav>
 
@@ -63,7 +63,7 @@ export default function Navbar() {
             </Link>
           ))}
           <a href="https://www.hme.tw/" target="_blank" rel="noopener noreferrer" className="block px-3 py-2.5 text-sm text-forest font-medium">
-            HME 官網 →
+            HME.TW →
           </a>
         </div>
       )}
